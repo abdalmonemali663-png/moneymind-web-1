@@ -1,0 +1,58 @@
+/* src/app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Cairo", "Inter", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans Arabic", "Inter", system-ui, sans-serif;
+  --font-tabular: "Inter", "IBM Plex Sans Arabic", system-ui, sans-serif;
+}
+
+* {
+  border-color: theme("colors.slate.400" / 15%);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-paper-100 text-ink-900 dark:bg-ink-900 dark:text-paper-100;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* أرقام التنسيق الجدولي — لمحاذاة المبالغ المالية في الجداول والبطاقات */
+.tabular-nums-fix {
+  font-family: var(--font-tabular);
+  font-feature-settings: "tnum" 1;
+}
+
+/* تمييز عناصر التركيز بلوحة المفاتيح بوضوح (متطلب وصولية) */
+:focus-visible {
+  outline: 2px solid theme("colors.emerald.500");
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* احترام تفضيل تقليل الحركة */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* شريط تمرير دقيق ومتناسق مع الهوية */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: theme("colors.slate.400" / 40%);
+  border-radius: 999px;
+}
