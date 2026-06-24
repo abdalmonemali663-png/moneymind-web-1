@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 // src/app/[locale]/(auth)/login/page.tsx
 import { getDictionary, isValidLocale, type Locale } from "@/i18n/config";
 import { notFound } from "next/navigation";
