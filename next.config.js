@@ -15,8 +15,6 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  // هذا السطر الإضافي يمنع فشل الـ Build بسبب الصفحات الثابتة مثل login
-  missingSuspenseWithSearchParams: "error" in process.env ? undefined : false,
 };
 
 module.exports = nextConfig;
